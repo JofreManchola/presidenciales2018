@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elecciones 2018</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.3/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.6.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.16.0/build/vega-embed.js"></script>
+
+    <style media="screen">
+        /* Add space between Vega-Embed links  */
+
+        .vega-actions a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Elecciones presidenciales 2018 segunda vuelta</h1>
+    <h2>Análisis de votantes y abstención</h2>
+    <p>El conjunto de datos distingue entre total de votantes y votantes (personas que realmente votaron).</p>
+    <p>
+        <b>Tip:</b> Seleccione departamentos usando el modismo barchart</p>
+    <!-- Container for the visualization -->
+    <div id="container">
+        <div id="vis"></div>
+        <div id="insights">
+            <h3>Sobre los datos</h3>
+            <p>El objetivo de este análisis es analizar la distribución de la totalidad de votantes registrados y la abstención
+                en la segunda vueltra presidencial de Colombia en 2018</p>
+            <p>La distribución de total de votantes a nivel municipal presenta demasiada oclusión por lo que preferí agruparla
+                inicialmente por departamento, esto muestra un sesgo a la izquierda con 3 outliers: Bogotá D.C., Antioquia
+                y Valle.</p>
+            <p>El segundo modismo presenta al distribución de total de votantes por municipio para los departamentos seleccionados
+                en el barchart (control brush), así controlo un poco la oclusión y permite identificar los municipios más
+                representativos en la selección de departamentos.</p>
+            <p>El tercer modismo representa la cantidad de departamentos por total de votantes (cada 500.000) y su porcentaje
+                de abstención. Mostrando que aquellos departamentos con menor fueza electoral son, en general, los que tienen
+                mayor índice de abstención. Se resaltan allí los consulados con una cantidad total de votantes superior a
+                1.3 millones de personas y con una abstención del 85%.</p>
+            <p>Finalmente se presenta un barchar que representa el
+                <span style="color:red;">total de votantes</span> en color
+                <span style="color:red;">rojo</span> y los
+                <span style="color:blue;">votantes</span> en color
+                <span style="color:blue;">azul</span> donde además se cuentra con la posibilidad de seleccionar los departamentos aplicando filtro
+                o selección en la visualización.
+            </p>
+            <h4>Gracias!</h4>
+            <p>Desarrollado por <a target="_blank" href="https://twitter.com/jofremanchola">Jofre Manchola</a></p>
+            <p>Basado en el dataset de <a target="_blank" href="https://github.com/infrahumano/elecciones2018/blob/master/segunda_vuelta_presidencial/segunda_vuelta_presidencial.csv">elecciones2018 - segunda_vuelta_presidencial</a> publicados por <a target="_blank" href="https://github.com/infrahumano">Javier Moreno</a>.</p>
+        </div>
+    </div>
+    <script src="vlSpec.js"></script>
+</body>
+
+</html>
